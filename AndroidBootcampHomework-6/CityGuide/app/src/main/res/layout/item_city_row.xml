@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cityItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <ImageButton
+            android:id="@+id/btnExpand"
+            android:layout_width="42dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Expand"
+            android:src="@drawable/expand_24"
+            app:layout_constraintBottom_toBottomOf="@+id/cityNameText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cityNameText" />
+
+
+        <TextView
+            android:id="@+id/cityNameText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="City Name"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/btnExpand"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/btnNarrow"
+            android:layout_width="42dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Haritaya Git"
+            android:src="@drawable/go_to_map_24"
+            app:layout_constraintBottom_toBottomOf="@+id/cityNameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cityNameText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/locationRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cityNameText"
+            tools:listitem="@layout/item_location_row" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
